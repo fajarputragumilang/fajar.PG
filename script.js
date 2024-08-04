@@ -1,11 +1,3 @@
-const hamburger = document.querySelector('#hamburger');
-const navbar = document.querySelector('#navbar');
-
-
-
-
-
-
 
 // scroll
 window.onscroll = function () {
@@ -20,18 +12,27 @@ window.onscroll = function () {
         toTop.classList.remove('btn-toTop');
 
     }
-}
+};
 
 
+const darkToogle = document.querySelector('#dark-toogle');
+const html = document.querySelector('html');
+const navbar = document.querySelector('#navbar');
+const hamburgerMenu = document.querySelector('#hamburgerMenu');
 
 
-// click diluar tombol
-hamburger.addEventListener('click', function () {
+hamburgerMenu.addEventListener('click', function () {
     navbar.classList.toggle('hidden');
 });
 
-window.addEventListener('click', function (e) {
-    if(e.target != navbar && e.target != hamburger) {
-        navbar.classList.add('hidden')
+darkToogle.addEventListener('click', function() {
+    if (darkToogle.checked) {
+        html.classList.add('dark');
+    } else {
+        html.classList.remove('dark')
     }
-})
+});
+
+
+
+
